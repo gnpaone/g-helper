@@ -119,37 +119,37 @@ namespace GHelper.Input
 
             if (keyProfile != Keys.None)
             {
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control, keyProfile);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win, keyProfile);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile);
             }
 
-            if (keyApp != Keys.None) hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control, keyApp);
+            if (keyApp != Keys.None) hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win, keyApp);
 
             if (!AppConfig.Is("skip_hotkeys"))
             {
                 if (AppConfig.IsDUO())
                 {
-                    hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F7);
-                    hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F8);
+                    hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F7);
+                    hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F8);
                 }
 
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F13);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F13);
 
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F14);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F15);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F14);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F15);
 
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile0);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile1);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile2);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile3);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile4);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyXGM);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile0);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile1);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile2);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile3);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyProfile4);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, keyXGM);
 
-                hook.RegisterHotKey(ModifierKeys.Control, Keys.VolumeDown);
-                hook.RegisterHotKey(ModifierKeys.Control, Keys.VolumeUp);
+                hook.RegisterHotKey(ModifierKeys.Win, Keys.VolumeDown);
+                hook.RegisterHotKey(ModifierKeys.Win, Keys.VolumeUp);
                 hook.RegisterHotKey(ModifierKeys.Shift, Keys.VolumeDown);
                 hook.RegisterHotKey(ModifierKeys.Shift, Keys.VolumeUp);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control, Keys.F20);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win, Keys.F20);
             }
 
             if (!AppConfig.IsZ13() && !AppConfig.IsAlly() && !AppConfig.IsVivoZenPro())
@@ -160,11 +160,11 @@ namespace GHelper.Input
 
             if (AppConfig.IsAlly())
             {
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F1);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F2);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F3);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F4);
-                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F6);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F1);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F2);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F3);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F4);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Win | ModifierKeys.Alt, Keys.F6);
             }
 
             // FN-Lock group
@@ -425,14 +425,14 @@ namespace GHelper.Input
 
             }
 
-            if (e.Modifier == (ModifierKeys.Control | ModifierKeys.Shift))
+            if (e.Modifier == (ModifierKeys.Win | ModifierKeys.Shift))
             {
                 if (e.Key == keyProfile) modeControl.CyclePerformanceMode();
                 if (e.Key == keyApp) Program.SettingsToggle();
                 if (e.Key == Keys.F20) ToggleMic();
             }
 
-            if (e.Modifier == (ModifierKeys.Control | ModifierKeys.Shift | ModifierKeys.Alt))
+            if (e.Modifier == (ModifierKeys.Win | ModifierKeys.Shift | ModifierKeys.Alt))
             {
                 if (e.Key == keyProfile) modeControl.CyclePerformanceMode(true);
 
@@ -481,7 +481,7 @@ namespace GHelper.Input
             }
 
 
-            if (e.Modifier == (ModifierKeys.Control))
+            if (e.Modifier == (ModifierKeys.Win))
             {
                 switch (e.Key)
                 {
