@@ -21,7 +21,7 @@ jobs:
         dotnet publish app/GHelper.sln --configuration Release --runtime win-x64 -p:PublishSingleFile=true --no-self-contained
         powershell Compress-Archive app/bin/x64/Release/net8.0-windows/win-x64/publish/GHelper.exe GHelper.zip
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: GHelper-artifacts
         path: |
