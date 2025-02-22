@@ -223,6 +223,16 @@ namespace GHelper.Display
             Registry.SetValue(GameVisualKey, GameVisualValue, status, RegistryValueKind.DWord);
         }
 
+        public static void InitGamut()
+        {
+            int gamut = AppConfig.Get("gamut");
+
+            if (gamut < 0) return;
+            if ((SplendidGamut)gamut == SplendidGamut.Native || (SplendidGamut)gamut == SplendidGamut.VivoNative) return; 
+
+            SetGamut(gamut);
+        }
+
         public static void SetGamut(int mode = -1)
         {
             if (skipGamut) return;
